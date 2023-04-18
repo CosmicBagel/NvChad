@@ -2,6 +2,8 @@
 local M = {}
 M.ui = {theme = 'chadracula'}
 
+M.plugins = 'custom.plugins'
+
 M.ui.nvdash = {
     load_on_startup = true,
 
