@@ -2,6 +2,7 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
+local configs = require 'lspconfig/configs'
 
 -- lspconfig.omnisharp.setup({
 --
@@ -14,6 +15,12 @@ lspconfig.rust_analyzer.setup({
     root_dir = lspconfig.util.root_pattern("Cargo.toml"),
 })
 
+--[[
+https://github.com/razzmatazz/csharp-language-server
+Language Server for C#.
+csharp-ls requires the [dotnet-sdk](https://dotnet.microsoft.com/download) to be installed.
+The preferred way to install csharp-ls is with `dotnet tool install --global csharp-ls`
+--]]
 lspconfig.csharp_ls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
@@ -24,9 +31,40 @@ lspconfig.csharp_ls.setup({
       AutomaticWorkspaceInit = true,
     },
 })
---[[
-https://github.com/razzmatazz/csharp-language-server
-Language Server for C#.
-csharp-ls requires the [dotnet-sdk](https://dotnet.microsoft.com/download) to be installed.
-The preferred way to install csharp-ls is with `dotnet tool install --global csharp-ls`
---]]
+
+lspconfig.gopls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    root_dir = lspconfig.util.root_pattern(".git", "go.mod"),
+    filetypes = { 'go', 'go.mod' },
+    flags = {
+        debounce_text_changes = 150,
+    },
+    settings = {
+        gopls = {
+            gofumpt = true,
+            experimentalPostfixCompletions = true,
+            staticcheck = true,
+            usePlaceholders = true,
+        },
+    },
+}
+
+if not configs.golangcilsp then
+ 	configs.golangcilsp = {
+		default_config = {
+			cmd = {'golangci-lint-langserver'},
+			root_dir = lspconfig.util.root_pattern('.git', 'go.mod'),
+			init_options = {
+					command = {
+                        "golangci-lint", "run", "--enable-all", "--disable",
+                        "lll", "--out-format", "json", "--issues-exit-code=1"
+                    };
+			}
+		};
+	}
+end
+
+lspconfig.golangci_lint_ls.setup {
+	filetypes = {'go','gomod'}
+}
