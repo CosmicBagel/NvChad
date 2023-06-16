@@ -12,4 +12,8 @@ M.vimfugitive = {
   enable = true,
 }
 
+M.cspell = {
+    enable = true,
+}
+
 return M
