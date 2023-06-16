@@ -265,9 +265,6 @@ local default_plugins = {
       require("which-key").setup(opts)
     end,
   },
-  {
-    "p00f/nvim-ts-rainbow"
-  },
 }
 
 local config = require("core.utils").load_config()
