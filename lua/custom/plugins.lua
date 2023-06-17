@@ -84,12 +84,10 @@ local plugins = {
   {
     "ggandor/leap.nvim",
     lazy = false,
-    config = function()
-      utils.load_mappings "leap"
-      return require("custom.configs.others").leap
-    end,
+    opts = {},
     init = function()
       require("leap").add_default_mappings()
+      utils.load_mappings "leap"
     end,
   },
 }

@@ -15,7 +15,4 @@ M.vim_fugitive = {
 M.symbols_outline = {
 }
 
-M.leap = {
-}
-
 return M
