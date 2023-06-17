@@ -1,3 +1,4 @@
+local utils = require "core.utils"
 local plugins = {
   {
     "neovim/nvim-lspconfig",
@@ -7,9 +8,6 @@ local plugins = {
         {
           "davidmh/cspell.nvim",
           lazy = false,
-          config = function()
-            return require("plugins.configs.others").cspell
-          end,
         },
       },
       config = function()
@@ -39,8 +37,19 @@ local plugins = {
     "tpope/vim-fugitive",
     lazy = false,
     config = function()
-      return require("plugins.configs.others").vimfugitive
+      return require("plugins.configs.others").vim_fugitive
+    end,
+  },
+  {
+    "simrat39/symbols-outline.nvim",
+    lazy = false,
+    config = function()
+      utils.load_mappings "symbols_outline"
+      return require("custom.configs.others").symbols_outline
     end,
   },
 }
+
+
+
 return plugins

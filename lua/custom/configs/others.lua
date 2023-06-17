@@ -8,12 +8,11 @@ M.autosave = {
   enable = true,
 }
 
-M.vimfugitive = {
+M.vim_fugitive = {
   enable = true,
 }
 
-M.cspell = {
-    enable = true,
+M.symbols_outline = {
 }
 
 return M

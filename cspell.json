@@ -1,9 +1,1 @@
-{"version":"0.2","language":"en","words":[
-    "builtins",
-    "lspconfig",
-    "chadrc",
-    "stylua",
-    "nvim",
-    "nvimtree",
-    "treesitter"
-],"flagWords":[]}
+{"words":["builtins","lspconfig","chadrc","stylua","nvim","nvimtree","treesitter","davidmh","neovim","Pocco","tpope","shellcheck","simrat","mousescroll","relativenumber","shellredir","shellpipe","shellquote","shellcmdflag","shellxquote","pwsh","colorcolumn","shiftwidth","softtabstop","gitsigns","blankline","keymaps","whichkey","nvterm","Nvchad","setloclist","renamer","oldfiles","visualmode","linewise","tabufline","Dont","termcodes","cheatsheet","enew","bufnr"],"version":"0.2","language":"en-gb","flagWords":[]}

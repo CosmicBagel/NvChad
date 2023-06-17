@@ -46,10 +46,10 @@ M.general = {
     ["<leader>b"] = { "<cmd> enew <CR>", "New buffer" },
     ["<leader>ch"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
 
-    ["<C-u>"] = { "<C-u>zz"},
-    ["<C-d>"] = { "<C-d>zz"},
-    ["n"] = { "nzz"},
-    ["N"] = { "Nzz"},
+    ["<C-u>"] = { "<C-u>zz" },
+    ["<C-d>"] = { "<C-d>zz" },
+    ["n"] = { "nzz" },
+    ["N"] = { "Nzz" },
   },
 
   t = {
@@ -198,14 +198,14 @@ M.lspconfig = {
 
     ["[d"] = {
       function()
-        vim.diagnostic.goto_prev({ float = { border = "rounded" }})
+        vim.diagnostic.goto_prev { float = { border = "rounded" } }
       end,
       "Goto prev",
     },
 
     ["]d"] = {
       function()
-        vim.diagnostic.goto_next({ float = { border = "rounded" }})
+        vim.diagnostic.goto_next { float = { border = "rounded" } }
       end,
       "Goto next",
     },
@@ -456,6 +456,13 @@ M.gitsigns = {
       end,
       "Toggle deleted",
     },
+  },
+}
+
+M.symbols_outline = {
+  plugin = true,
+  n = {
+    ["<C-m>"] = { "<cmd> SymbolsOutline <CR>", "Toggle Symbol Outline" },
   },
 }
 
