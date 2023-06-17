@@ -84,11 +84,15 @@ local plugins = {
   {
     "ggandor/leap.nvim",
     lazy = false,
-    opts = {},
+    opts = { offset = -2 },
     init = function()
       require("leap").add_default_mappings()
       utils.load_mappings "leap"
     end,
+  },
+  {
+    "tpope/vim-surround",
+    lazy = false,
   },
 }
 
