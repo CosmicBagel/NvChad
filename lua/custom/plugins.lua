@@ -81,9 +81,17 @@ local plugins = {
       require("symbols-outline").setup()
     end,
   },
+  {
+    "ggandor/leap.nvim",
+    lazy = false,
+    config = function()
+      utils.load_mappings "leap"
+      return require("custom.configs.others").leap
+    end,
+    init = function()
+      require("leap").add_default_mappings()
+    end,
   },
 }
-
-
 
 return plugins

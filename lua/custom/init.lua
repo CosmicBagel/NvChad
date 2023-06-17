@@ -19,4 +19,15 @@ vim.wo.relativenumber = true
 
 vim.opt.mousescroll = "ver:1,hor:3"
 
-vim.api.nvim_create_user_command("LL", "Lazy load all", {})
+function dump(o)
+   if type(o) == 'table' then
+      local s = '{ '
+      for k,v in pairs(o) do
+         if type(k) ~= 'number' then k = '"'..k..'"' end
+         s = s .. '['..k..'] = ' .. dump(v) .. ','
+      end
+      return s .. '} '
+   else
+      return tostring(o)
+   end
+end
