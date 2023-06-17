@@ -1,5 +1,15 @@
 local utils = require "core.utils"
+local cmp = require "cmp"
 local plugins = {
+  {
+    "hrsh7th/nvim-cmp",
+    opts = {
+      mapping = {
+        --not all terminals send ctrl-space, many send ctrl-@ instead
+        ["<C-@>"] = cmp.mapping.complete(),
+      },
+    },
+  },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -18,6 +28,26 @@ local plugins = {
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = { "lua", "rust", "c_sharp", "c", "cpp", "zig" },
+      highlight = {
+        enable = true,
+        use_languagetree = true,
+        additional_vim_regex_highlighting = true,
+      },
+      indent = { enable = true },
+      rainbow = {
+        enable = true,
+        -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+        extended_mode = true,
+        max_file_line = nil,
+        -- colors = {}, -- table of hex strings
+        -- termcolors = {} -- table of colour name strings
+      },
+    },
   },
   {
     "HiPhish/nvim-ts-rainbow2",
@@ -42,11 +72,15 @@ local plugins = {
   },
   {
     "simrat39/symbols-outline.nvim",
-    lazy = false,
+    cmd = { "SymbolsOutlineOpen", "SymbolsOutlineClose", "SymbolsOutline" },
     config = function()
-      utils.load_mappings "symbols_outline"
       return require("custom.configs.others").symbols_outline
     end,
+    init = function()
+      utils.load_mappings "symbols_outline"
+      require("symbols-outline").setup()
+    end,
+  },
   },
 }
 

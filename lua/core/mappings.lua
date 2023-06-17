@@ -45,11 +45,6 @@ M.general = {
     -- new buffer
     ["<leader>b"] = { "<cmd> enew <CR>", "New buffer" },
     ["<leader>ch"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
-
-    ["<C-u>"] = { "<C-u>zz" },
-    ["<C-d>"] = { "<C-d>zz" },
-    ["n"] = { "nzz" },
-    ["N"] = { "Nzz" },
   },
 
   t = {
@@ -456,13 +451,6 @@ M.gitsigns = {
       end,
       "Toggle deleted",
     },
-  },
-}
-
-M.symbols_outline = {
-  plugin = true,
-  n = {
-    ["<C-m>"] = { "<cmd> SymbolsOutline <CR>", "Toggle Symbol Outline" },
   },
 }
 

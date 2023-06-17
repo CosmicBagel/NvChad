@@ -4,6 +4,8 @@ M.ui = {theme = 'chadracula'}
 
 M.plugins = 'custom.plugins'
 
+M.mappings = require 'custom.mappings'
+
 M.ui.nvdash = {
     load_on_startup = true,
 
