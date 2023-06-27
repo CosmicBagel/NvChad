@@ -29,7 +29,7 @@ M.telescope = {
   n = {
     ["gr"] = {
       function()
-        require("telescope.builtin").lsp_references({fname_width=40, trim_text = true})
+        require("telescope.builtin").lsp_references { fname_width = 40, trim_text = true }
       end,
       "LSP - Find references",
     },
@@ -38,6 +38,12 @@ M.telescope = {
         require("telescope.builtin").lsp_document_symbols(symbol_picker_opts)
       end,
       "LSP - Document Symbols",
+    },
+    ["<leader>sf"] = {
+      function()
+        require("telescope.builtin").lsp_document_symbols { fname_width = 40, symbols = { "method", "function" } }
+      end,
+      "LSP - Document Symbols (functions)",
     },
     ["<leader>sw"] = {
       function()
