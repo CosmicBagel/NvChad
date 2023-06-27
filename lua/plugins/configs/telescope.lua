@@ -1,3 +1,18 @@
+local path_display_func = function(opts, path)
+  --always show file name, even with truncation
+
+  local tail = require("telescope.utils").path_tail(path)
+  local tail_len = (string.len(tail) + 1)
+  local path_nofile = string.sub(path, 1, -tail_len)
+
+  --todo make dynamic based on telescope window width and left panel size
+  local limit = 35 - tail_len
+
+  local trunc = require("plenary.strings").truncate(path_nofile, limit, "..", -1)
+
+  return string.format("%s%s", trunc, tail)
+end
+
 local options = {
   defaults = {
     vimgrep_arguments = {
@@ -33,6 +48,7 @@ local options = {
     file_sorter = require("telescope.sorters").get_fuzzy_file,
     file_ignore_patterns = { "node_modules" },
     generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+    -- path_display = path_display_func,
     path_display = { "truncate" },
     winblend = 0,
     border = {},
@@ -50,6 +66,12 @@ local options = {
   },
 
   extensions_list = { "themes", "terms" },
+
+  pickers = {
+    lsp_references = {
+      path_display = path_display_func,
+    },
+  },
 }
 
 return options
