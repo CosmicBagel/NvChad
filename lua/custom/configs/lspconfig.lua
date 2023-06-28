@@ -4,34 +4,12 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 local configs = require "lspconfig/configs"
 
--- lspconfig.omnisharp.setup({
---
--- })
-
 lspconfig.rust_analyzer.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "rust" },
   root_dir = lspconfig.util.root_pattern "Cargo.toml",
 }
-
---[[
-https://github.com/razzmatazz/csharp-language-server
-Language Server for C#.
-csharp-ls requires the [dotnet-sdk](https://dotnet.microsoft.com/download) to be installed.
-The preferred way to install csharp-ls is with `dotnet tool install --global csharp-ls`
---]]
--- lspconfig.csharp_ls.setup({
---     on_attach = on_attach,
---     capabilities = capabilities,
---     cmd = { 'csharp-ls' },
---     root_dir = lspconfig.util.root_pattern('*.sln', '*.csproj', '*.fsproj', '.git'),
---     filetypes = { 'cs' },
---     init_options = {
---       AutomaticWorkspaceInit = true,
---     },
---     useModernNet = false,
--- })
 
 local omnisharp_bin = ""
 local omnisharp_cmd = {}
@@ -48,12 +26,13 @@ lspconfig.omnisharp.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   cmd = omnisharp_cmd,
-  -- useModernNet = false,
   root_dir = lspconfig.util.root_pattern("*.sln", "*.csproj", "*.fsproj", ".git"),
   filetypes = { "cs" },
-  -- init_options = {
-  --   AutomaticWorkspaceInit = true,
-  -- },
+  enable_import_completion = true,
+
+  handlers = {
+    ["textDocument/definition"] = require("omnisharp_extended").handler,
+  },
 }
 
 lspconfig.gopls.setup {
