@@ -1,5 +1,6 @@
 local utils = require "core.utils"
 local cmp = require "cmp"
+
 local plugins = {
   {
     "hrsh7th/nvim-cmp",
@@ -7,6 +8,7 @@ local plugins = {
       mapping = {
         --not all terminals send ctrl-space, many send ctrl-@ instead
         ["<C-@>"] = cmp.mapping.complete(),
+        ["<C-y>"] = cmp.mapping.complete(),
       },
     },
   },
@@ -16,8 +18,8 @@ local plugins = {
       "jose-elias-alvarez/null-ls.nvim",
       dependencies = {
         {
-          "davidmh/cspell.nvim",
-          lazy = false,
+          -- "davidmh/cspell.nvim",
+          -- lazy = false,
         },
       },
       config = function()

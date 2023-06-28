@@ -1,20 +1,27 @@
 local null_ls = require "null-ls"
-local cspell = require "cspell"
 
 local formatting = null_ls.builtins.formatting
-local lint = null_ls.builtins.diagnostics
+
+local cspell_config = {
+  config_file_preferred_name = "cspell.json",
+}
 
 local sources = {
   -- formatting.prettier,
   formatting.stylua,
   formatting.csharpier,
-  cspell.diagnostics,
-  cspell.code_actions,
+  null_ls.builtins.code_actions.cspell.with { config = cspell_config },
+  null_ls.builtins.diagnostics.cspell.with {
+    -- Force the severity to be HINT
+    diagnostics_postprocess = function(diagnostic)
+      diagnostic.severity = vim.diagnostic.severity.HINT
+    end,
+    config = cspell_config,
+  },
   null_ls.builtins.code_actions.gitsigns,
-  -- lint.shellcheck,
 }
 
 null_ls.setup {
-  debug = true,
+  debug = false,
   sources = sources,
 }
