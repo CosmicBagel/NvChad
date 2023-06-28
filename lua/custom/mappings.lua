@@ -47,7 +47,7 @@ M.telescope = {
     },
     ["<leader>sw"] = {
       function()
-        require("telescope.builtin").lsp_workspace_symbols(symbol_picker_opts)
+        require("telescope.builtin").lsp_dynamic_workspace_symbols(symbol_picker_opts)
       end,
       "LSP - Workspace Symbols",
     },
