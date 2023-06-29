@@ -51,6 +51,12 @@ M.telescope = {
       end,
       "LSP - Workspace Symbols",
     },
+    ["<leader>sc"] = {
+      function()
+        require("telescope.builtin").lsp_dynamic_workspace_symbols({fname = 40, symbols = { "class", "enum", "struct"}})
+      end,
+      "LSP - Workspace Symbols (classes)",
+    },
   },
 }
 
