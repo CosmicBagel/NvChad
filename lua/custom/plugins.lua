@@ -15,17 +15,21 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      "jose-elias-alvarez/null-ls.nvim",
-      dependencies = {
-        {
-          -- "davidmh/cspell.nvim",
-          -- lazy = false,
+      {
+        "jose-elias-alvarez/null-ls.nvim",
+        dependencies = {
+          {
+            -- "davidmh/cspell.nvim",
+            -- lazy = false,
+          },
         },
+        config = function()
+          require "custom.configs.null-ls"
+        end,
       },
-      config = function()
-        require "custom.configs.null-ls"
-      end,
-      "Hoffs/omnisharp-extended-lsp.nvim",
+      {
+        "Hoffs/omnisharp-extended-lsp.nvim",
+      },
     },
     config = function()
       require "plugins.configs.lspconfig"
