@@ -19,7 +19,11 @@ local sources = {
     config = cspell_config,
   },
   null_ls.builtins.code_actions.gitsigns,
-  null_ls.builtins.formatting.gofumpt,
+
+  -- go formatting --
+  null_ls.builtins.formatting.goimports,
+
+  -- go linting --
   null_ls.builtins.diagnostics.golangci_lint,
 }
 
