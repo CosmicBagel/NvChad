@@ -5,7 +5,7 @@ function M.init()
         server = {
             -- options to pass to nvim-lspconfig
             -- i.e. the arguments to require("lspconfig").clangd.setup({})
-            cmd = { "clangd" },
+            cmd = { "clangd-17" },
             filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
             single_file_support = true,
         },
