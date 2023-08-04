@@ -101,6 +101,11 @@ local plugins = {
     "tpope/vim-surround",
     lazy = false,
   },
+  {
+    "p00f/clangd_extensions.nvim",
+    lazy = false,
+    init = require("custom.configs.clangd_extensions").init
+  },
 }
 
 return plugins

@@ -25,6 +25,12 @@ local sources = {
 
   -- go linting --
   null_ls.builtins.diagnostics.golangci_lint,
+
+  -- cpp formatting --
+  null_ls.builtins.formatting.clang_format,
+
+  -- cpp linting --
+  null_ls.builtins.diagnostics.cpplint,
 }
 
 null_ls.setup {
