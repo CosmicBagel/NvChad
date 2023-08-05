@@ -95,6 +95,13 @@ local plugins = {
     "tpope/vim-surround",
     lazy = false,
   },
+  {
+    "NMAC427/guess-indent.nvim",
+    lazy = false,
+    init = function()
+      require("guess-indent").setup {}
+    end,
+  },
 }
 
 return plugins

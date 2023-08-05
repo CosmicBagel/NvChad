@@ -1,7 +1,3 @@
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-
 vim.opt.colorcolumn = "120"
 
 local sysname = vim.loop.os_uname().sysname
