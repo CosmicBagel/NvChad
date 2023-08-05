@@ -27,10 +27,17 @@ local sources = {
   null_ls.builtins.diagnostics.golangci_lint,
 
   -- cpp formatting --
-  null_ls.builtins.formatting.clang_format,
+  null_ls.builtins.formatting.clang_format.with { command = "clang-format-17" },
 
   -- cpp linting --
-  null_ls.builtins.diagnostics.cpplint,
+  null_ls.builtins.diagnostics.cpplint.with {
+    args = {
+      "--filter=-legal/copyright",
+      "$FILENAME",
+    },
+  },
+  -- null_ls.builtins.diagnostics.clang_check.with { command = "clang-check-17" },
+  null_ls.builtins.diagnostics.cppcheck,
 }
 
 null_ls.setup {
