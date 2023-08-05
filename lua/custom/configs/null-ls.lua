@@ -33,6 +33,7 @@ local sources = {
   null_ls.builtins.diagnostics.cpplint.with {
     args = {
       "--filter=-legal/copyright",
+      "--linelength=120",
       "$FILENAME",
     },
   },
