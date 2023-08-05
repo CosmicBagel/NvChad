@@ -37,7 +37,9 @@ local sources = {
     },
   },
   -- null_ls.builtins.diagnostics.clang_check.with { command = "clang-check-17" },
-  null_ls.builtins.diagnostics.cppcheck,
+  null_ls.builtins.diagnostics.cppcheck.with {
+    args = { "--enable=warning,style,performance,portability,information", "--template=gcc", "$FILENAME" },
+  },
 }
 
 null_ls.setup {
