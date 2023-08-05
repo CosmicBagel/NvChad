@@ -38,13 +38,3 @@ function dump(o)
     return tostring(o)
   end
 end
-
--- og vim messes with my keybindings when opening cpp files, this hacks around that
-vim.keymap.set("n", "K", vim.lsp.buf.hover, { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>fm", function()
-  vim.lsp.buf.format { async = true }
-end, { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>f", function()
-  vim.diagnostic.open_float { border = "rounded" }
-end, { silent = true, noremap = true })

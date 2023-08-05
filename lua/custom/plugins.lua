@@ -30,6 +30,11 @@ local plugins = {
       {
         "Hoffs/omnisharp-extended-lsp.nvim",
       },
+      {
+        "p00f/clangd_extensions.nvim",
+        lazy = false,
+        -- init = require("custom.configs.clangd_extensions").init
+      },
     },
     config = function()
       require "plugins.configs.lspconfig"
@@ -78,17 +83,6 @@ local plugins = {
     end,
   },
   {
-    "simrat39/symbols-outline.nvim",
-    cmd = { "SymbolsOutlineOpen", "SymbolsOutlineClose", "SymbolsOutline" },
-    config = function()
-      return require("custom.configs.others").symbols_outline
-    end,
-    init = function()
-      utils.load_mappings "symbols_outline"
-      require("symbols-outline").setup()
-    end,
-  },
-  {
     "ggandor/leap.nvim",
     lazy = false,
     opts = { offset = -2 },
@@ -100,11 +94,6 @@ local plugins = {
   {
     "tpope/vim-surround",
     lazy = false,
-  },
-  {
-    "p00f/clangd_extensions.nvim",
-    lazy = false,
-    init = require("custom.configs.clangd_extensions").init
   },
 }
 
