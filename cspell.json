@@ -1,1 +1,1 @@
-{"language":"en","flagWords":[],"version":"0.2","words":["VIMRUNTIME","VIMRUNTIME","nvchad","nvim","stdpath","lspconfig","bufnr","lspconfigs","omnisharp","sysname","samue","stylua","builtins","postprocess","gitsigns","gofumpt","gopls","golangci","goimports","clangd"]}
+{"language":"en","words":["VIMRUNTIME","VIMRUNTIME","nvchad","nvim","stdpath","lspconfig","bufnr","lspconfigs","omnisharp","sysname","samue","stylua","builtins","postprocess","gitsigns","gofumpt","gopls","golangci","goimports","clangd","cpplint","linelength","cppcheck"],"version":"0.2","flagWords":[]}

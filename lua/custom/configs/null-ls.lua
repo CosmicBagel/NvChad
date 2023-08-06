@@ -6,6 +6,8 @@ local cspell_config = {
   config_file_preferred_name = "cspell.json",
 }
 
+local clang_format_style = "--style={BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 120}"
+
 local sources = {
   -- formatting.prettier,
   formatting.stylua,
@@ -27,7 +29,15 @@ local sources = {
   null_ls.builtins.diagnostics.golangci_lint,
 
   -- cpp formatting --
-  null_ls.builtins.formatting.clang_format.with { command = "clang-format-17" },
+  null_ls.builtins.formatting.clang_format.with {
+    command = "clang-format-17",
+    args = require("null-ls.helpers").range_formatting_args_factory({
+      clang_format_style,
+      "--sort-includes",
+      "--assume-filename",
+      "$FILENAME",
+    }, "--offset", "--length", { use_length = true, row_offset = -1, col_offset = -1 }),
+  },
 
   -- cpp linting --
   null_ls.builtins.diagnostics.cpplint.with {
@@ -40,8 +50,8 @@ local sources = {
   -- null_ls.builtins.diagnostics.clang_check.with { command = "clang-check-17" },
   null_ls.builtins.diagnostics.cppcheck.with {
     args = {
-      "--enable=warning,style,performance,portability,information,unusedFunction",
-      "--supress=missingIncludeSystem",
+      "--enable=warning,style,performance,information",
+      "--suppress=missingIncludeSystem",
       "--template=gcc",
       "--project=compile_commands.json",
       "$FILENAME",
