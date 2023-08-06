@@ -102,6 +102,16 @@ local plugins = {
       require("guess-indent").setup {}
     end,
   },
+  {
+    "rmagatti/auto-session",
+    lazy = false,
+    config = function()
+      require("auto-session").setup {
+        log_level = "error",
+        auto_session_suppress_dirs = { "~/", "~/proj", "~/Downloads", "/" },
+      }
+    end,
+  },
 }
 
 return plugins
