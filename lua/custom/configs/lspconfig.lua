@@ -52,7 +52,9 @@ lspconfig.gopls.setup {
     },
   },
 }
-
+-- utf-16 offsetEncoding is a hack to deal with "multiple different client offset_encodings detected"
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428
+capabilities.offsetEncoding = { "utf-16" }
 require("clangd_extensions").setup {
   server = {
     -- options to pass to nvim-lspconfig
