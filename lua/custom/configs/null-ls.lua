@@ -6,7 +6,7 @@ local cspell_config = {
   config_file_preferred_name = "cspell.json",
 }
 
-local clang_format_style = "--style={BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 120}"
+local clang_format_style = "--style={BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 100}"
 
 local sources = {
   -- formatting.prettier,
@@ -43,7 +43,7 @@ local sources = {
   null_ls.builtins.diagnostics.cpplint.with {
     args = {
       "--filter=-legal/copyright",
-      "--linelength=120",
+      "--linelength=100",
       "$FILENAME",
     },
   },

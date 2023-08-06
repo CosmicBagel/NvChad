@@ -1,4 +1,4 @@
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "100"
 
 local sysname = vim.loop.os_uname().sysname
 if sysname == "Windows_NT" then
