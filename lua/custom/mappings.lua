@@ -55,29 +55,17 @@ M.telescope = {
 
 M.trouble = {
   n = {
-    ["<leader>tt"] = {
+    ["<c-m>"] = {
       function()
         require("trouble").toggle()
       end,
-      "Trouble - Open Panel",
+      "Trouble - Toggle Panel",
     },
-    ["<leader>tf"] = {
+    ["<leader>m"] = {
       function()
         require("trouble").open()
       end,
       "Trouble - Focus Panel",
-    },
-    ["<leader>tr"] = {
-      function()
-        require("trouble").refresh()
-      end,
-      "Trouble - Refresh",
-    },
-    ["<leader>th"] = {
-      function()
-        require("trouble").help()
-      end,
-      "Trouble - Help",
     },
   },
 }
