@@ -9,13 +9,6 @@ M.general = {
   },
 }
 
-M.symbols_outline = {
-  plugin = true,
-  n = {
-    ["<C-m>"] = { "<cmd> SymbolsOutline <CR>", "Toggle Symbol Outline" },
-  },
-}
-
 M.leap = {
   plugin = true,
   n = {},
@@ -56,6 +49,35 @@ M.telescope = {
         require("telescope.builtin").lsp_dynamic_workspace_symbols { fname = 40, symbols = { "class", "enum", "struct" } }
       end,
       "LSP - Workspace Symbols (classes)",
+    },
+  },
+}
+
+M.trouble = {
+  n = {
+    ["<leader>tt"] = {
+      function()
+        require("trouble").toggle()
+      end,
+      "Trouble - Open Panel",
+    },
+    ["<leader>tf"] = {
+      function()
+        require("trouble").open()
+      end,
+      "Trouble - Focus Panel",
+    },
+    ["<leader>tr"] = {
+      function()
+        require("trouble").refresh()
+      end,
+      "Trouble - Refresh",
+    },
+    ["<leader>th"] = {
+      function()
+        require("trouble").help()
+      end,
+      "Trouble - Help",
     },
   },
 }
