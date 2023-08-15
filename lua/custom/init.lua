@@ -1,4 +1,5 @@
 vim.opt.colorcolumn = "100"
+vim.wo.relativenumber = true
 
 local sysname = vim.loop.os_uname().sysname
 if sysname == "Windows_NT" then
@@ -17,8 +18,6 @@ end
 if sysname == "Darwin" then
   vim.opt.mousescroll = "ver:1,hor:3"
 end
-
-vim.wo.relativenumber = true
 
 function dump(o)
   if type(o) == "table" then
