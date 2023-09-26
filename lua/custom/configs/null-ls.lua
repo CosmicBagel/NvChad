@@ -30,7 +30,7 @@ local sources = {
 
   -- cpp formatting --
   null_ls.builtins.formatting.clang_format.with {
-    command = "clang-format-17",
+    command = "clang-format",
     args = require("null-ls.helpers").range_formatting_args_factory({
       clang_format_style,
       "--sort-includes",
