@@ -18,6 +18,12 @@ local symbol_picker_opts = {
   fname_width = 40,
 }
 
+M.lspconfig = {
+  n = {
+    ["gl"] = { "<cmd> ClangdSwitchSourceHeader <CR>", "Clangd - Switch to Header/Implementation File" },
+  },
+}
+
 M.telescope = {
   n = {
     ["gr"] = {
