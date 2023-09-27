@@ -30,11 +30,11 @@ local plugins = {
       {
         "Hoffs/omnisharp-extended-lsp.nvim",
       },
-      {
-        "p00f/clangd_extensions.nvim",
-        lazy = false,
-        -- init = require("custom.configs.clangd_extensions").init
-      },
+      -- {
+      --   "p00f/clangd_extensions.nvim",
+      --   lazy = false,
+      --   -- init = require("custom.configs.clangd_extensions").init
+      -- },
     },
     config = function()
       require "plugins.configs.lspconfig"
