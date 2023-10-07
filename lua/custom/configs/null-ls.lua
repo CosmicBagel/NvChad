@@ -6,7 +6,7 @@ local cspell_config = {
   config_file_preferred_name = "cspell.json",
 }
 
-local clang_format_style = "--style={BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 100}"
+-- local clang_format_style = "--style={BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 100}"
 
 local sources = {
   -- formatting.prettier,
@@ -32,7 +32,7 @@ local sources = {
   null_ls.builtins.formatting.clang_format.with {
     command = "clang-format",
     args = require("null-ls.helpers").range_formatting_args_factory({
-      clang_format_style,
+      -- clang_format_style,
       "--sort-includes",
       "--assume-filename",
       "$FILENAME",
