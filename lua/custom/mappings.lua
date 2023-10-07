@@ -20,7 +20,7 @@ local symbol_picker_opts = {
 
 M.lspconfig = {
   n = {
-    ["gl"] = { "<cmd> ClangdSwitchSourceHeader <CR>", "Clangd - Switch to Header/Implementation File" },
+    ["gs"] = { "<cmd> ClangdSwitchSourceHeader <CR>", "Clangd - Switch to Header/Implementation File" },
   },
 }
 
