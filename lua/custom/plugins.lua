@@ -14,6 +14,7 @@ local plugins = {
   },
   {
     "neovim/nvim-lspconfig",
+    lazy = false,
     dependencies = {
       {
         "jose-elias-alvarez/null-ls.nvim",
