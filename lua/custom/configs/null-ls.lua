@@ -40,13 +40,13 @@ local sources = {
   },
 
   -- cpp linting --
-  null_ls.builtins.diagnostics.cpplint.with {
-    args = {
-      "--filter=-legal/copyright",
-      "--linelength=100",
-      "$FILENAME",
-    },
-  },
+  -- null_ls.builtins.diagnostics.cpplint.with {
+  --   args = {
+  --     "--filter=-legal/copyright",
+  --     "--linelength=100",
+  --     "$FILENAME",
+  --   },
+  -- },
   -- null_ls.builtins.diagnostics.clang_check.with { command = "clang-check-17" },
   null_ls.builtins.diagnostics.cppcheck.with {
     args = {
