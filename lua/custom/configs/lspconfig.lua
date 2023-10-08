@@ -78,7 +78,7 @@ lspconfig.clangd.setup {
 --     -- i.e. the arguments to require("lspconfig").clangd.setup({})
 --     on_attach = on_attach,
 --     capabilities = capabilities,
---     -- cmd = { "clangd" },
+--     cmd = { "clangd-16" },
 --     filetypes = { "c", "h", "hpp", "cpp", "objc", "objcpp", "cuda", "proto" },
 --     single_file_support = true,
 --     root_dir = lspconfig.util.root_pattern(
