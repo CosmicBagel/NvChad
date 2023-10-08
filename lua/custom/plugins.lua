@@ -15,6 +15,13 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     lazy = false,
+    -- init = function()
+    --   require("core.utils").lazy_load "nvim-lspconfig"
+    -- end,
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
+    end,
     dependencies = {
       {
         "jose-elias-alvarez/null-ls.nvim",
@@ -31,36 +38,25 @@ local plugins = {
       {
         "Hoffs/omnisharp-extended-lsp.nvim",
       },
-      -- {
-      --   "p00f/clangd_extensions.nvim",
-      --   lazy = false,
-      --   -- init = require("custom.configs.clangd_extensions").init
-      -- },
+      {
+        "p00f/clangd_extensions.nvim",
+        -- lazy = false,
+        -- init = function()
+        --   require("custom.configs.clangd_extensions").init()
+        -- end,
+      },
     },
-    config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
-    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = { "lua", "rust", "c_sharp", "c", "cpp", "zig" },
-      highlight = {
-        enable = true,
-        use_languagetree = true,
-        additional_vim_regex_highlighting = true,
-      },
-      indent = { enable = true },
-      rainbow = {
-        enable = true,
-        -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-        extended_mode = true,
-        max_file_line = nil,
-        -- colors = {}, -- table of hex strings
-        -- termcolors = {} -- table of colour name strings
-      },
+    -- bagel addition, idk why but if ts loads before lspconfig, lsps don't actually kick off
+    dependencies = {
+      "neovim/nvim-lspconfig",
     },
+    opts = function()
+      require "plugins.configs.treesitter"
+      require "custom.configs.treesitter"
+    end,
   },
   {
     "HiPhish/nvim-ts-rainbow2",
