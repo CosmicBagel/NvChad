@@ -6,7 +6,7 @@ local cspell_config = {
   config_file_preferred_name = "cspell.json",
 }
 
--- local clang_format_style = "--style={BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 100}"
+-- local clang_format_style = "--style={BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 100}"
 
 local sources = {
   -- formatting.prettier,
@@ -33,7 +33,7 @@ local sources = {
     command = "clang-format",
     args = require("null-ls.helpers").range_formatting_args_factory({
       -- clang_format_style,
-      "--sort-includes",
+      -- "--sort-includes",
       "--assume-filename",
       "$FILENAME",
     }, "--offset", "--length", { use_length = true, row_offset = -1, col_offset = -1 }),
@@ -47,14 +47,16 @@ local sources = {
   --     "$FILENAME",
   --   },
   -- },
+
   -- null_ls.builtins.diagnostics.clang_check.with { command = "clang-check-17" },
-  null_ls.builtins.diagnostics.cppcheck.with {
-    args = {
-      "--enable=warning,style,performance",
-      "--template=gcc",
-      "$FILENAME",
-    },
-  },
+
+  -- null_ls.builtins.diagnostics.cppcheck.with {
+  --   args = {
+  --     "--enable=warning,style,performance",
+  --     "--template=gcc",
+  --     "$FILENAME",
+  --   },
+  -- },
 }
 
 null_ls.setup {
