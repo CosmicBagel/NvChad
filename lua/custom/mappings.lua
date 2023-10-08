@@ -61,12 +61,6 @@ M.telescope = {
 
 M.trouble = {
   n = {
-    ["<c-m>"] = {
-      function()
-        require("trouble").toggle()
-      end,
-      "Trouble - Toggle Panel",
-    },
     ["<leader>m"] = {
       function()
         require("trouble").open()
