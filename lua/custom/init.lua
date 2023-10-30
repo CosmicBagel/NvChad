@@ -41,5 +41,5 @@ function dump(o)
 end
 
 if vim.g.neovide then
-  vim.o.guifont = "JetBrainsMono Nerd Font:h10" -- text below applies for VimScript
+  vim.o.guifont = "JetBrainsMono Nerd Font:h10"
 end
