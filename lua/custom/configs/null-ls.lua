@@ -51,14 +51,14 @@ local sources = {
   -- seems redundant with clangd running
   -- null_ls.builtins.diagnostics.clang_check.with { command = "clang-check-16" },
 
-  null_ls.builtins.diagnostics.cppcheck.with {
-    args = {
-      "--enable=warning,style,performance",
-      "--template=gcc",
-      "--library=cppcheck.cfg",
-      "$FILENAME",
-    },
-  },
+  -- null_ls.builtins.diagnostics.cppcheck.with {
+  --   args = {
+  --     "--enable=warning,style,performance",
+  --     "--template=gcc",
+  --     -- "--library=cppcheck.cfg",
+  --     "$FILENAME",
+  --   },
+  -- },
 }
 
 null_ls.setup {
