@@ -6,6 +6,8 @@ M.general = {
     ["<C-d>"] = { "<C-d>zz" },
     ["n"] = { "nzz" },
     ["N"] = { "Nzz" },
+    -- no macros plz
+    ["q"] = { "<nop>" },
   },
 }
 
