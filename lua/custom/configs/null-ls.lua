@@ -1,4 +1,5 @@
 local null_ls = require "null-ls"
+local cspell = require "cspell"
 
 local formatting = null_ls.builtins.formatting
 
@@ -12,8 +13,12 @@ local sources = {
   -- formatting.prettier,
   formatting.stylua,
   formatting.csharpier,
-  null_ls.builtins.code_actions.cspell.with { config = cspell_config },
-  null_ls.builtins.diagnostics.cspell.with {
+
+  -- null_ls.builtins.code_actions.cspell.with { config = cspell_config },
+  cspell.code_actions.with { config = cspell_config },
+
+  -- null_ls.builtins.diagnostics.cspell.with {
+  cspell.diagnostics.with {
     -- Force the severity to be HINT
     diagnostics_postprocess = function(diagnostic)
       diagnostic.severity = vim.diagnostic.severity.HINT

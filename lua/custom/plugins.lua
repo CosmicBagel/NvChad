@@ -27,7 +27,7 @@ local plugins = {
         "jose-elias-alvarez/null-ls.nvim",
         dependencies = {
           {
-            -- "davidmh/cspell.nvim",
+            "davidmh/cspell.nvim",
             -- lazy = false,
           },
         },
