@@ -7,6 +7,9 @@ vim.opt.smartindent = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 
+vim.opt.title = true
+vim.opt.titlestring = "%{substitute(getcwd(), $HOME, '~', '')} | %{substitute(expand('%'), $HOME, '~', '')}"
+
 local sysname = vim.loop.os_uname().sysname
 if sysname == "Windows_NT" then
   -- using powershell on windows
