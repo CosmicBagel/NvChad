@@ -1,5 +1,5 @@
 local options = {
-  ensure_installed = { "lua", "rust", "c_sharp", "c", "cpp", "zig" },
+  ensure_installed = { "lua", "rust", "c_sharp", "c", "cpp", "zig", "go" },
   highlight = {
     enable = true,
     use_languagetree = true,
