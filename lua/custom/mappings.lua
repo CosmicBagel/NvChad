@@ -58,6 +58,12 @@ M.telescope = {
       end,
       "LSP - Workspace Symbols (classes)",
     },
+    ["<leader>f'"] = {
+      function()
+        require("telescope.builtin").marks()
+      end,
+      "Search bookmarks",
+    },
   },
 }
 
