@@ -58,7 +58,7 @@ lspconfig.gopls.setup {
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428
 capabilities.offsetEncoding = { "utf-16" }
 lspconfig.clangd.setup {
-  cmd = { "clangd-16" },
+  cmd = { "clangd-17" },
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "c", "h", "hpp", "cpp", "objc", "objcpp", "cuda", "proto" },

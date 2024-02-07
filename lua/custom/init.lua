@@ -44,11 +44,15 @@ function dump(o)
 end
 
 if vim.g.neovide then
-  vim.o.guifont = "JetBrainsMono Nerd Font:h11"
+  -- vim.o.guifont = "JetBrainsMono Nerd Font:h10"
+  -- vim.g.neovide_scale_factor = 1.0 -- 0.7
+  vim.g.neovide_cursor_trail_size = 0
+  vim.g.neovide_cursor_animation_length = 0
+  vim.g.neovide_scroll_animation_length = 0
   vim.api.nvim_set_keymap("n", "<F11>", ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
   -- vim.g.neovide_cursor_vfx_mode = "wireframe"
   -- vim.g.neovide_cursor_vfx_mode = "wireframe"
   -- vim.g.neovide_floating_blur_amount_x = 1.0
   -- vim.g.neovide_floating_blur_amount_y = 1.0
-  vim.g.neovide_transparency = 0.99
+  -- vim.g.neovide_transparency = 0.99
 end

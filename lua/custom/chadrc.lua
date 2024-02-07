@@ -1,7 +1,7 @@
 ---@type ChadrcConfig
 local M = {}
 M.ui = {
-  theme = "chadracula",
+  theme = "ayu_dark",
   hl_override = {
     CursorLine = {
       bg = "#000000",

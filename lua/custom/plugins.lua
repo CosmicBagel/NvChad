@@ -114,6 +114,20 @@ local plugins = {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {},
   },
+  {
+    "mfussenegger/nvim-dap",
+    lazy = false,
+    config = function()
+      require "custom.configs.dap"
+    end,
+  },
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = "kevinhwang91/promise-async",
+    config = function()
+      require "custom.configs.ufo"
+    end,
+  },
 }
 
 return plugins
