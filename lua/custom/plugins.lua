@@ -68,9 +68,7 @@ local plugins = {
   {
     "Pocco81/auto-save.nvim",
     lazy = false,
-    config = function()
-      return require("plugins.configs.others").autosave
-    end,
+    config = require("custom.configs.others").autosave,
   },
   {
     "tpope/vim-fugitive",
