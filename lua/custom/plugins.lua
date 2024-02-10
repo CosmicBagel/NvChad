@@ -52,22 +52,10 @@ local plugins = {
     -- bagel addition, idk why but if ts loads before lspconfig, lsps don't actually kick off
     dependencies = {
       "neovim/nvim-lspconfig",
-      "HiPhish/nvim-ts-rainbow2",
     },
     opts = function()
       require "plugins.configs.treesitter"
       require "custom.configs.treesitter"
-      require("nvim-treesitter.configs").setup {
-        rainbow = {
-          enable = true,
-          -- list of languages you want to disable the plugin for
-          disable = { "jsx", "cpp" },
-          -- Which query to use for finding delimiters
-          query = "rainbow-parens",
-          -- Highlight the entire buffer all at once
-          strategy = require("ts-rainbow").strategy.global,
-        },
-      }
     end,
   },
   {
