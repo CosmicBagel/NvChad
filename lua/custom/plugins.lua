@@ -61,7 +61,9 @@ local plugins = {
   {
     "HiPhish/nvim-ts-rainbow2",
     lazy = false,
-    config = require("custom.configs.others").rainbow,
+    config = function()
+      return require("custom.configs.others").rainbow
+    end,
   },
   {
     "Pocco81/auto-save.nvim",
@@ -71,7 +73,9 @@ local plugins = {
   {
     "tpope/vim-fugitive",
     lazy = false,
-    config = require("custom.configs.others").vim_fugitive,
+    config = function()
+      return require("custom.configs.others").vim_fugitive
+    end,
   },
   {
     "ggandor/leap.nvim",
