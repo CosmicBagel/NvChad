@@ -2,6 +2,7 @@ local M = {}
 
 M.general = {
   n = {
+    -- keep things centered with zz
     ["<C-u>"] = { "<C-u>zz" },
     ["<C-d>"] = { "<C-d>zz" },
     ["n"] = { "nzz" },
@@ -63,6 +64,12 @@ M.telescope = {
         require("telescope.builtin").marks()
       end,
       "Search bookmarks",
+    },
+    ["<leader>fp"] = {
+      function()
+        require("telescope").extensions.notify.notify()
+      end,
+      "Search notification (notify)",
     },
   },
 }
