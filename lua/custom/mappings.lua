@@ -111,4 +111,15 @@ M.ufo = {
   },
 }
 
+M.undotree = {
+  n = {
+    ["<leader>u"] = {
+      function()
+        vim.cmd.UndotreeToggle()
+      end,
+      "Toggle Undotree",
+    },
+  },
+}
+
 return M

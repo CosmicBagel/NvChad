@@ -159,6 +159,13 @@ local plugins = {
       "rcarriga/nvim-notify",
     },
   },
+  {
+    "mbbill/undotree",
+    lazy = false,
+    config = function()
+      vim.g.undotree_SetFocusWhenToggle = 1
+    end,
+  },
 }
 
 return plugins
