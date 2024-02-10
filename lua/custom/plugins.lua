@@ -123,10 +123,41 @@ local plugins = {
   },
   {
     "kevinhwang91/nvim-ufo",
+    lazy = false,
     dependencies = "kevinhwang91/promise-async",
     config = function()
       require "custom.configs.ufo"
     end,
+  },
+  {
+    "tamton-aquib/duck.nvim",
+    lazy = false,
+    config = function()
+      vim.keymap.set("n", "<leader>dd", function()
+        require("duck").hatch()
+      end, { desc = "Unleash the duck" })
+      vim.keymap.set("n", "<leader>dk", function()
+        require("duck").cook()
+      end, { desc = "Cook the duck" })
+    end,
+  },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    config = function()
+      require "custom.configs.noice"
+    end,
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    },
   },
 }
 
