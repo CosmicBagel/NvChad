@@ -54,7 +54,10 @@ local plugins = {
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-    config = function() end,
+    config = function()
+      vim.g.lazygit_use_custom_config_file_path = 1
+      vim.g.lazygit_config_file_path = "/home/sam/.config/lazygit/nvim-config.yml"
+    end,
   },
   {
     "NvChad/nvterm",
