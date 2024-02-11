@@ -122,4 +122,15 @@ M.undotree = {
   },
 }
 
+M.lazygit = {
+  n = {
+    ["<leader>gg"] = {
+      function()
+        vim.cmd.LazyGit()
+      end,
+      "Toggle LazyGit window"
+    }
+  }
+}
+
 return M

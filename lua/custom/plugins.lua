@@ -48,6 +48,15 @@ local plugins = {
     },
   },
   {
+    "kdheepak/lazygit.nvim",
+    lazy = false,
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function() end,
+  },
+  {
     "NvChad/nvterm",
     init = function()
       require("core.utils").load_mappings "nvterm"
