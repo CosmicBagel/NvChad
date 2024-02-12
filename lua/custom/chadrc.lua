@@ -22,6 +22,11 @@ M.ui.tabufline = {
   lazyload = true,
   overriden_modules = nil,
 }
+
+M.ui.cheatsheet = {
+   theme = "simple", -- simple/grid
+}
+
 M.ui.nvdash = {
   load_on_startup = true,
 
