@@ -83,7 +83,7 @@ local plugins = {
               -- border = "single",
               border = "rounded",
             },
-            horizontal = { location = "rightbelow", split_ratio = 0.3 },
+            horizontal = { location = "rightbelow", split_ratio = 0.5 },
             vertical = { location = "rightbelow", split_ratio = 0.5 },
           },
         },
