@@ -9,6 +9,11 @@ M.general = {
     ["N"] = { "Nzz" },
     -- no macros plz
     ["q"] = { "<nop>" },
+    -- resize windows more easily
+    ["<C-Up>"] = {":resize +1<cr>"},
+    ["<C-Down>"] = {":resize -1<cr>"},
+    ["<C-Left>"] = {":vertical resize -1<cr>"},
+    ["<C-Right>"] = {":vertical resize +1<cr>"},
   },
 }
 
