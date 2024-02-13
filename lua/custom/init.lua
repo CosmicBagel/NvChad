@@ -28,6 +28,12 @@ if sysname == "Darwin" then
   vim.opt.mousescroll = "ver:1,hor:3"
 end
 
+vim.api.nvim_create_user_command("ResetTabSize", function()
+  vim.opt.tabstop = 4
+  vim.opt.softtabstop = 4
+  vim.opt.shiftwidth = 4
+end, {})
+
 function dump(o)
   if type(o) == "table" then
     local s = "{ "
