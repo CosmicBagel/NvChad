@@ -9,7 +9,7 @@ local plugins = {
       mapping = {
         --not all terminals send ctrl-space, many send ctrl-@ instead
         ["<C-@>"] = cmp.mapping.complete(),
-        ["<C-y>"] = cmp.mapping.complete(),
+        -- ["<C-y>"] = cmp.mapping.complete(),
       },
     },
   },
