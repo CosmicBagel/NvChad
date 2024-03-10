@@ -1,4 +1,7 @@
 ---@type ChadrcConfig
+--
+vim.api.nvim_set_hl(0, "@comment", { link = "Comment" })
+
 local M = {}
 M.ui = {
   theme = "ayu_dark",
@@ -6,6 +9,17 @@ M.ui = {
     CursorLine = {
       bg = "#000000",
       fg = "NONE",
+      sp = "NONE",
+    },
+    Visual = {
+      bg = "#142652",
+      fg = "NONE",
+      sp = "NONE",
+    },
+    -- setting comment color seems to not work :(
+    Comment = {
+      bg = "None",
+      fg = "#00df53",
       sp = "NONE",
     },
   },
