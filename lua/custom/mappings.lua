@@ -10,10 +10,10 @@ M.general = {
     -- no macros plz
     ["q"] = { "<nop>" },
     -- resize windows more easily
-    ["<C-Up>"] = {":resize +3<cr>"},
-    ["<C-Down>"] = {":resize -3<cr>"},
-    ["<C-Left>"] = {":vertical resize -3<cr>"},
-    ["<C-Right>"] = {":vertical resize +3<cr>"},
+    ["<C-Up>"] = { ":resize +3<cr>" },
+    ["<C-Down>"] = { ":resize -3<cr>" },
+    ["<C-Left>"] = { ":vertical resize -3<cr>" },
+    ["<C-Right>"] = { ":vertical resize +3<cr>" },
   },
 }
 
@@ -133,9 +133,68 @@ M.lazygit = {
       function()
         vim.cmd.LazyGit()
       end,
-      "Toggle LazyGit window"
-    }
-  }
+      "Toggle LazyGit window",
+    },
+  },
+}
+
+M.dap = {
+  n = {
+    ["<F5>"] = {
+      function()
+        require("dap").continue()
+      end,
+      "DAP - Debug Continue",
+    },
+    ["<F10>"] = {
+      function()
+        require("dap").step_over()
+      end,
+      "DAP - Debug Step Over",
+    },
+    ["<F11>"] = {
+      function()
+        require("dap").step_into()
+      end,
+      "DAP - Debug Step Into",
+    },
+    ["<F12>"] = {
+      function()
+        require("dap").step_out()
+      end,
+      "DAP - Debug Step Out",
+    },
+    ["<leader>b"] = {
+      function()
+        require("dap").toggle_breakpoint()
+      end,
+      "DAP - Debug Toggle Breakpoint",
+    },
+    ["<leader>B"] = {
+      function()
+        require("dap").set_breakpoint(vim.fn.input "Breakpoint condition: ")()
+      end,
+      "DAP - Debug Set Breakpoint",
+    },
+    ["<leader>lp"] = {
+      function()
+        require("dap").set_breakpoint(nil, nil, vim.fn.input "Log point message: ")()
+      end,
+      "DAP - Debug Set Breakpoint",
+    },
+    ["<leader>dr"] = {
+      function()
+        require("dap").repl.open()
+      end,
+      "DAP - Debug REPL Open",
+    },
+    ["<leader>dl"] = {
+      function()
+        require("dap").run_last()
+      end,
+      "DAP - Debug Run Last",
+    },
+  },
 }
 
 return M
