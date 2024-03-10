@@ -1,3 +1,9 @@
+-- set-option colorset-option -ga terminal-overrides ",xterm-256color:Tc"
+
+-- vim.opt. highlight Normal guibg=none
+--vim.highlight.create('Normal', {guibg=0})
+-- vim.highlight.create('ColorColumn', {ctermbg=0, guibg=lightgrey}, false)
+
 vim.opt.colorcolumn = "100"
 vim.wo.relativenumber = true
 
@@ -32,6 +38,10 @@ vim.api.nvim_create_user_command("ResetTabSize", function()
   vim.opt.tabstop = 4
   vim.opt.softtabstop = 4
   vim.opt.shiftwidth = 4
+end, {})
+
+vim.api.nvim_create_user_command("ClearAllBreakpoints", function()
+  require("dap").clear_breakpoints()
 end, {})
 
 function dump(o)
